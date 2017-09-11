@@ -1,4 +1,4 @@
-HOSTNAME=s2n-asoke.dyndns.org
+HOSTNAME=s2npanda.ddns.net
 IP=$(host $HOSTNAME | grep -iE "[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+" |cut -f4 -d' '|head -n 1)
 
 # If chain for remote doesn't exist, create it
@@ -16,4 +16,4 @@ if ! /sbin/iptables -C INPUT -t filter -j $HOSTNAME >/dev/null 2>&1 ; then
 fi
 
 
-*/5 * * * * root /root/dnydns-updater.sh > /dev/null 2>&1
+* * * * * root /root/noip-updater.sh > /dev/null 2>&1
